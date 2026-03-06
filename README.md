@@ -1,8 +1,30 @@
 # Landing voltsaiapp.com
 
-Landing estática para **voltsaiapp.com**. Contenido: hero, características, CTAs a Google Play y App Store, footer con enlaces legales.
+Landing estática para **voltsaiapp.com**. Contenido: hero, características, CTAs a Google Play y App Store, footer con enlaces legales (privacidad, términos, eliminación de cuenta).
 
-**Repositorio público:** [github.com/SebastianArevalo87/voltsaiapp](https://github.com/SebastianArevalo87/voltsaiapp)
+**Repositorio público (donde se publica la web):** [github.com/SebastianArevalo87/voltsaiapp](https://github.com/SebastianArevalo87/voltsaiapp)
+
+---
+
+## Dónde guardar los cambios
+
+**Regla:** cuando digas o pienses «guardar los cambios»:
+
+| Qué cambió | Dónde se guarda |
+|------------|------------------|
+| **Solo la landing** (archivos dentro de `landing/`: HTML, CSS, páginas legales, img, CNAME) | Repo **voltsaiapp** → copiar el contenido de `landing/` al clone de voltsaiapp y hacer `git push` allí. Ver pasos abajo en «Guardar cambios de la landing». |
+| **Todo lo demás** (app Flutter, `lib/`, `android/`, `ios/`, `pubspec.yaml`, `docs/`, etc.) | Repo **volts** → `git add`, `commit`, `push` desde la raíz del proyecto Volts (`c:\dev\volts`). |
+| **Landing y resto** | Ambos: primero commit/push en **volts** (para tener la landing en el repo de la app), luego copiar `landing/` a voltsaiapp y push en **voltsaiapp**. |
+
+La carpeta `landing/` en este proyecto es la **fuente de verdad** para la web. El repo voltsaiapp es solo el destino de publicación (GitHub Pages); no se edita allí, solo se copia desde aquí.
+
+### Guardar cambios de la landing (subir a voltsaiapp.com)
+
+1. Copiar todo el contenido de esta carpeta (`landing/`) a la raíz del clone del repo voltsaiapp (ej. `c:\dev\voltsaiapp-deploy`).
+2. En esa carpeta: `git add -A`, `git commit -m "..."`, `git push origin main`.
+3. Más detalles: ver [docs/DEPLOY_LANDING.md](../docs/DEPLOY_LANDING.md) en el repo Volts.
+
+---
 
 ## Publicar en GitHub Pages con dominio personalizado
 
