@@ -11,12 +11,15 @@
   <link rel="stylesheet" href="styles.css">
   <style>
     .legal { max-width: 720px; margin: 0 auto; padding: 2rem 1.25rem; }
-    .legal h1 { font-size: 1.5rem; margin-bottom: 1rem; }
-    .legal p { margin: 0 0 1rem; color: var(--on-surface-variant); font-size: 0.9375rem; }
+    .legal h1 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+    .legal h2 { font-size: 1.125rem; margin: 1.5rem 0 0.5rem; color: var(--on-surface); }
+    .legal p, .legal ul { margin: 0 0 1rem; color: var(--on-surface-variant); font-size: 0.9375rem; line-height: 1.6; }
+    .legal ul { padding-left: 1.25rem; }
     .legal a { color: var(--secondary); }
     .back { display: inline-block; margin-bottom: 1.5rem; color: var(--on-surface-variant); text-decoration: none; font-size: 0.875rem; }
     .back:hover { color: var(--secondary); }
     .header-logo-link { text-decoration: none; }
+    .legal-updated { font-size: 0.8125rem; color: var(--on-surface-variant); margin-bottom: 1.5rem; }
   </style>
 </head>
 <body>
@@ -31,8 +34,37 @@
   <main class="legal">
     <a href="index.html" class="back">← Volver</a>
     <h1>Política de privacidad</h1>
-    <p>Esta página está en preparación. La política de privacidad de Volts describirá cómo recopilamos, usamos y protegemos tus datos cuando utilizas la aplicación.</p>
-    <p>Mientras tanto, puedes contactarnos si tienes preguntas.</p>
+    <p class="legal-updated">Última actualización: marzo 2026</p>
+
+    <p>En Volts («nosotros», «la app») nos comprometemos a proteger tu privacidad. Esta política describe qué datos recopilamos, para qué los usamos y cómo puedes ejercer tus derechos.</p>
+
+    <h2>1. Datos que recopilamos</h2>
+    <p>Al usar la aplicación Volts podemos recopilar:</p>
+    <ul>
+      <li><strong>Datos de cuenta:</strong> correo electrónico, nombre (si lo facilitas) e identificador asociado al inicio de sesión (p. ej. Google o Apple).</li>
+      <li><strong>Datos de uso:</strong> rutinas, planes de entrenamiento, registros de ejercicios, series, pesos y fotos de progreso que tú introduces en la app.</li>
+      <li><strong>Datos técnicos:</strong> identificador del dispositivo para notificaciones push (si las activas) y datos de uso básicos para mejorar el servicio y detectar errores.</li>
+    </ul>
+
+    <h2>2. Finalidad del tratamiento</h2>
+    <p>Utilizamos tus datos para: proporcionar y mejorar el servicio (rutinas, asistente IA Volt, seguimiento de progreso), gestionar tu cuenta, enviar notificaciones que hayas aceptado y cumplir obligaciones legales cuando corresponda.</p>
+
+    <h2>3. Base legal y conservación</h2>
+    <p>El tratamiento se basa en la ejecución del contrato (prestación del servicio) y, cuando aplique, en tu consentimiento (p. ej. notificaciones). Conservamos los datos mientras mantengas la cuenta activa y el tiempo necesario para cumplir obligaciones legales o reclamaciones.</p>
+
+    <h2>4. Compartir datos</h2>
+    <p>No vendemos tus datos personales. Podemos compartir información con proveedores que nos ayudan a operar la app (hosting, autenticación, análisis), bajo contrato y solo para las finalidades indicadas.</p>
+
+    <h2>5. Tus derechos</h2>
+    <p>Puedes acceder, rectificar, limitar el tratamiento u oponerte al mismo, y solicitar la portabilidad o la eliminación de tus datos. Para ejercer estos derechos o eliminar tu cuenta, consulta la página <a href="account-deletion.html">Eliminación de cuenta</a> o contacta con nosotros.</p>
+
+    <h2>6. Seguridad</h2>
+    <p>Aplicamos medidas técnicas y organizativas para proteger tus datos frente a accesos no autorizados, pérdida o alteración.</p>
+
+    <h2>7. Cambios</h2>
+    <p>Podemos actualizar esta política. Los cambios relevantes se comunicarán mediante la app o por correo. El uso continuado de la app tras la publicación implica la aceptación de la nueva versión.</p>
+
+    <p>Si tienes dudas, puedes contactarnos a través de los canales indicados en la aplicación o en esta web.</p>
   </main>
   <footer class="footer">
     <div class="container footer-inner">
@@ -40,6 +72,7 @@
       <nav class="footer-links">
         <a href="privacy.html">Política de privacidad</a>
         <a href="terms.html">Términos de uso</a>
+        <a href="account-deletion.html">Eliminación de cuenta</a>
       </nav>
     </div>
   </footer>
