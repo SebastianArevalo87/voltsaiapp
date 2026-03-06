@@ -263,7 +263,14 @@ body {
 
 .footer-links {
   display: flex;
-  gap: 1.25rem;
+  flex-wrap: wrap;
+  gap: 1rem 1.25rem;
+  justify-content: center;
+}
+@media (min-width: 480px) {
+  .footer-links {
+    justify-content: flex-end;
+  }
 }
 
 .footer-links a {
