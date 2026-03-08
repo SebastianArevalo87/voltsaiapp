@@ -383,11 +383,11 @@ body {
 }
 .store-badge {
   display: block;
-  position: relative;
   width: 100% !important;
   height: 100% !important;
-  line-height: 0;
-  overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
   box-sizing: border-box;
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
@@ -395,18 +395,11 @@ body {
   transform: scale(1.05);
   opacity: 0.95;
 }
-/* Imagen fuera del flujo: no puede alterar el tamaño del contenedor */
-.store-badge img {
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  bottom: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: contain !important;
-  object-position: center;
-  box-sizing: border-box;
+.store-badge-google {
+  background-image: url("img/btn-google.png");
+}
+.store-badge-apple {
+  background-image: url("img/btn-apple.svg");
 }
 
 /* Buttons */
