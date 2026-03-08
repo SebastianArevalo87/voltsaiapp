@@ -356,26 +356,35 @@ body {
   gap: 1.25rem;
   align-items: center;
 }
-/* Caja fija: mismo tamaño para ambos botones */
+/* Caja fija: mismo tamaño exacto para ambos botones (forzado) */
 .store-badge-box {
   display: block;
-  flex: 0 0 160px;
-  width: 160px;
-  height: 56px;
+  flex: 0 0 180px !important;
+  width: 180px !important;
+  min-width: 180px !important;
+  max-width: 180px !important;
+  height: 62px !important;
+  min-height: 62px !important;
+  max-height: 62px !important;
   flex-shrink: 0;
   box-sizing: border-box;
+  overflow: hidden;
 }
 @media (min-width: 480px) {
   .store-badge-box {
-    flex: 0 0 200px;
-    width: 200px;
-    height: 70px;
+    flex: 0 0 220px !important;
+    width: 220px !important;
+    min-width: 220px !important;
+    max-width: 220px !important;
+    height: 76px !important;
+    min-height: 76px !important;
+    max-height: 76px !important;
   }
 }
 .store-badge {
   display: block;
-  width: 100%;
-  height: 100%;
+  width: 100% !important;
+  height: 100% !important;
   line-height: 0;
   overflow: hidden;
   box-sizing: border-box;
@@ -387,9 +396,11 @@ body {
 }
 .store-badge img {
   display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: contain !important;
   object-position: center;
   box-sizing: border-box;
 }
