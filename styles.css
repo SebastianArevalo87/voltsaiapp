@@ -114,18 +114,22 @@ body {
   color: var(--on-surface);
 }
 
-/* Banner principal (feature graphic) al inicio */
+/* Banner principal (feature graphic) al inicio – no escalar por encima de su resolución */
 .hero-banner {
   width: 100%;
   background-color: var(--surface);
   padding: 0;
   line-height: 0;
+  display: flex;
+  justify-content: center;
 }
 .hero-banner-img {
-  width: 100%;
+  max-width: 100%;
+  width: 1024px;
   height: auto;
   display: block;
   vertical-align: middle;
+  object-fit: contain;
 }
 
 /* Hero – efecto wow */
