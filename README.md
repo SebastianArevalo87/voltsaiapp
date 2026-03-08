@@ -75,7 +75,7 @@ Si prefieres no usar el repo voltsaiapp y publicar desde el repo de la app:
 
 - En la landing se usan:
   - **Google Play:** `https://play.google.com/store/apps/details?id=com.volts.app`
-  - **App Store:** sustituir `idXXXXXXXXX` en `index.html` por el ID real cuando tengas la app publicada en iOS.
+  - **App Store:** `https://apps.apple.com/us/app/volts/id6760197459`
 
 ## Imágenes
 
