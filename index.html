@@ -20,11 +20,16 @@
   </header>
 
   <main>
-    <section class="hero">
+    <section class="hero" aria-label="Presentación">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-glow hero-glow-1" aria-hidden="true"></div>
+      <div class="hero-glow hero-glow-2" aria-hidden="true"></div>
       <div class="container hero-inner">
-        <img src="img/icon-512.png" alt="" class="hero-icon" width="120" height="120">
+        <div class="hero-icon-wrap">
+          <img src="img/icon-512.png" alt="" class="hero-icon" width="120" height="120">
+        </div>
         <h1 class="hero-title">Volts</h1>
-        <p class="hero-tagline">Planificación de entrenamientos con asistente IA</p>
+        <p class="hero-tagline">Planificación de entrenamientos con Volt, tu asistente IA</p>
         <p class="hero-desc">Crea rutinas personalizadas, sigue tu progreso y entrena con Volt, tu asistente inteligente.</p>
         <div class="hero-ctas">
           <a href="https://play.google.com/store/apps/details?id=com.volts.app" class="btn btn-primary" target="_blank" rel="noopener">Descargar en Google Play</a>
@@ -33,22 +38,55 @@
       </div>
     </section>
 
+    <section class="preview" aria-labelledby="preview-title">
+      <div class="container">
+        <h2 id="preview-title" class="preview-title reveal">Así es la app</h2>
+        <div class="preview-grid">
+          <div class="preview-card reveal">
+            <h3 class="preview-card-title">Chat y planes con Volt</h3>
+            <div class="chat-preview">
+              <div class="chat-bubble chat-bubble-volt">He creado una rutina personalizada para ti. Aquí tienes la estructura del plan semanal: Lunes tren superior, Miércoles piernas, Viernes cuerpo completo.</div>
+              <div class="chat-bubble chat-bubble-user">Créame una rutina personalizada</div>
+              <div class="chat-preview-cta">Se descontarán 10 volts al crear el plan.</div>
+              <button type="button" class="chat-preview-btn" disabled aria-hidden="true">Crear plan</button>
+            </div>
+          </div>
+          <div class="preview-card reveal">
+            <h3 class="preview-card-title">Ejercicios y seguimiento</h3>
+            <div class="exercise-preview">
+              <div class="exercise-preview-illus" aria-hidden="true"></div>
+              <p class="exercise-preview-name">Ejercicio ejemplo – Fuerza</p>
+              <div class="exercise-preview-chips">
+                <span class="exercise-preview-chip exercise-preview-chip-primary">Biceps</span>
+                <span class="exercise-preview-chip exercise-preview-chip-outline">Barra olímpica</span>
+              </div>
+              <p class="exercise-preview-instructions">Instrucciones</p>
+              <ol class="exercise-preview-steps">
+                <li>Posición inicial con agarre al ancho de hombros.</li>
+                <li>Flexiona codos y lleva la barra hacia los hombros controlando el movimiento.</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="features">
       <div class="container">
-        <h2 class="features-title">Por qué Volts</h2>
+        <h2 class="features-title reveal">Por qué Volts</h2>
         <div class="features-grid">
-          <article class="feature-card">
-            <div class="feature-icon" aria-hidden="true">⚡</div>
+          <article class="feature-card reveal">
+            <div class="feature-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg></div>
             <h3 class="feature-heading">Rutinas con IA</h3>
             <p class="feature-text">Genera planes y rutinas adaptados a tu objetivo, nivel y disponibilidad con la ayuda de Volt.</p>
           </article>
-          <article class="feature-card">
-            <div class="feature-icon" aria-hidden="true">📈</div>
+          <article class="feature-card reveal">
+            <div class="feature-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg></div>
             <h3 class="feature-heading">Seguimiento de progreso</h3>
             <p class="feature-text">Registra series, pesos y fotos. Visualiza tu evolución y mantén la motivación.</p>
           </article>
-          <article class="feature-card">
-            <div class="feature-icon" aria-hidden="true">🤖</div>
+          <article class="feature-card reveal">
+            <div class="feature-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 9V7c0-1.1-.9-2-2-2h-3c0-1.66-1.34-3-3-3S9 3.34 9 5H6c-1.1 0-2 .9-2 2v2c-1.66 0-3 1.34-3 3s1.34 3 3 3v4c0 1.1.9 2 2 2h3c0 1.66 1.34 3 3 3s3-1.34 3-3h3c1.1 0 2-.9 2-2v-4c1.66 0 3-1.34 3-3s-1.34-3-3-3zm-14 2.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5S8.33 14 7.5 14 6 13.33 6 12.5zm9 4.5c-.83 0-1.5-.67-1.5-1.5S14.17 14 15 14s1.5.67 1.5 1.5S15.83 17 15 17zm.5-6c0 .83-.67 1.5-1.5 1.5S12 11.83 12 11s.67-1.5 1.5-1.5 1.5.67 1.5 1.5z"/></svg></div>
             <h3 class="feature-heading">Volt, tu asistente</h3>
             <p class="feature-text">Chatea con Volt para ajustar rutinas, resolver dudas y mantener el rumbo en tus entrenamientos.</p>
           </article>
@@ -57,8 +95,9 @@
     </section>
 
     <section class="cta-section">
+      <div class="cta-bg" aria-hidden="true"></div>
       <div class="container">
-        <p class="cta-text">Descarga la app y empieza a entrenar con inteligencia.</p>
+        <p class="cta-text reveal">Descarga la app y empieza a entrenar con inteligencia.</p>
         <div class="hero-ctas">
           <a href="https://play.google.com/store/apps/details?id=com.volts.app" class="btn btn-primary" target="_blank" rel="noopener">Google Play</a>
           <a href="https://apps.apple.com/us/app/volts-entrenador-personal-ia/id6760197459" class="btn btn-secondary" target="_blank" rel="noopener">App Store</a>
@@ -77,5 +116,21 @@
       </nav>
     </div>
   </footer>
+  <script>
+    (function() {
+      if (typeof document.querySelectorAll === 'undefined') return;
+      var style = document.createElement('style');
+      style.textContent = '.reveal.visible { opacity: 1; transform: translateY(0) scale(1); }';
+      document.head.appendChild(style);
+      var els = document.querySelectorAll('.reveal');
+      if (!els.length) return;
+      var io = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) {
+          if (e.isIntersecting) e.target.classList.add('visible');
+        });
+      }, { rootMargin: '0px 0px -60px 0px', threshold: 0.05 });
+      els.forEach(function(el) { io.observe(el); });
+    })();
+  </script>
 </body>
 </html>
