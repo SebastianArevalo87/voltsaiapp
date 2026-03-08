@@ -1,0 +1,20 @@
+{
+  "name": "voltsaiapp-deploy",
+  "version": "1.0.0",
+  "description": "Landing estática para **voltsaiapp.com**. Contenido: hero, características, CTAs a Google Play y App Store, footer con enlaces legales (privacidad, términos, eliminación de cuenta).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SebastianArevalo87/voltsaiapp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SebastianArevalo87/voltsaiapp/issues"
+  },
+  "homepage": "https://github.com/SebastianArevalo87/voltsaiapp#readme"
+}

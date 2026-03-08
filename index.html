@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div class="parallax-layer" id="parallaxLayer" aria-hidden="true"></div>
   <header class="header">
     <div class="container header-inner">
       <a href="index.html" class="header-logo-link"><img src="img/icon-192.png" alt="Volts" class="header-logo" width="40" height="40"></a>
@@ -20,33 +21,6 @@
   </header>
 
   <main>
-    <section class="hero-banner" aria-label="Volt - Tu entrenador personal con IA">
-      <div class="hero-banner-inner container">
-        <div class="hero-banner-text">
-          <p class="hero-banner-brand">VOLT FITNESS</p>
-          <h2 class="hero-banner-title">VOLT</h2>
-          <p class="hero-banner-tagline">Tu entrenador personal con Inteligencia Artificial</p>
-          <ul class="hero-banner-features">
-            <li>Planes creados por IA</li>
-            <li>Rutinas para todo nivel</li>
-            <li>Seguimiento de progreso</li>
-          </ul>
-        </div>
-        <div class="hero-banner-carousel-wrap">
-          <div class="hero-banner-carousel" id="bannerCarousel" role="region" aria-label="Capturas de la app">
-            <div class="carousel-track" id="carouselTrack">
-              <div class="carousel-slide"><img src="img/screenshot_01_inicio.png" alt="Plan de entrenamiento" width="280" height="560" loading="eager"></div>
-              <div class="carousel-slide"><img src="img/screenshot_02_tienda.png" alt="Chat con Volt" width="280" height="560" loading="lazy"></div>
-              <div class="carousel-slide"><img src="img/screenshot_03_chat.png" alt="Progreso" width="280" height="560" loading="lazy"></div>
-              <div class="carousel-slide"><img src="img/screenshot_04_rutinas.png" alt="Rutinas del plan" width="280" height="560" loading="lazy"></div>
-              <div class="carousel-slide"><img src="img/screenshot_05_planes.png" alt="Ejecutar rutina" width="280" height="560" loading="lazy"></div>
-              <div class="carousel-slide"><img src="img/screenshot_06_ejercicio.png" alt="Detalle de ejercicio" width="280" height="560" loading="lazy"></div>
-            </div>
-          </div>
-          <div class="carousel-dots" id="carouselDots" aria-hidden="true"></div>
-        </div>
-      </div>
-    </section>
     <section class="hero">
       <div class="container hero-inner">
         <img src="img/icon-512.png" alt="" class="hero-icon" width="120" height="120">
@@ -54,15 +28,15 @@
         <p class="hero-tagline">Planificación de entrenamientos con asistente IA</p>
         <p class="hero-desc">Crea rutinas personalizadas, sigue tu progreso y entrena con Volt, tu asistente inteligente.</p>
         <div class="hero-ctas hero-ctas-badges">
-          <div class="store-badge-box"><a href="https://play.google.com/store/apps/details?id=com.volts.app" class="store-badge store-badge-google" target="_blank" rel="noopener" aria-label="Descargar en Google Play"></a></div>
-          <div class="store-badge-box"><a href="https://apps.apple.com/us/app/volts-entrenador-personal-ia/id6760197459" class="store-badge store-badge-apple" target="_blank" rel="noopener" aria-label="Descargar en App Store"></a></div>
+          <div class="store-badge-box"><a href="https://play.google.com/store/apps/details?id=com.volts.app" class="store-badge" target="_blank" rel="noopener" aria-label="Descargar en Google Play"><img src="img/btn-google.png" alt="Google Play" width="220" height="76"></a></div>
+          <div class="store-badge-box"><a href="https://apps.apple.com/us/app/volts-entrenador-personal-ia/id6760197459" class="store-badge" target="_blank" rel="noopener" aria-label="Descargar en App Store"><img src="img/btn-apple.png" alt="App Store" width="220" height="76"></a></div>
         </div>
       </div>
     </section>
 
     <section class="preview" aria-labelledby="preview-title">
       <div class="container">
-        <h2 id="preview-title" class="preview-title">Así es la app</h2>
+        <h2 id="preview-title" class="preview-title">Descubre la experiencia Volts</h2>
         <div class="screenshots-grid">
           <img src="img/screenshot_01_inicio.png" alt="Plan de entrenamiento" class="screenshot-img" width="280" height="560" loading="lazy">
           <img src="img/screenshot_02_tienda.png" alt="Chat con Volt - Crear plan" class="screenshot-img" width="280" height="560" loading="lazy">
@@ -76,7 +50,7 @@
 
     <section class="features">
       <div class="container">
-        <h2 class="features-title">Por qué Volts</h2>
+        <h2 class="features-title">Por qué elegir Volts</h2>
         <div class="features-grid">
           <article class="feature-card">
             <div class="feature-icon" aria-hidden="true">⚡</div>
@@ -101,8 +75,8 @@
       <div class="container">
         <p class="cta-text">Descarga la app y empieza a entrenar con inteligencia.</p>
         <div class="hero-ctas hero-ctas-badges">
-          <div class="store-badge-box"><a href="https://play.google.com/store/apps/details?id=com.volts.app" class="store-badge store-badge-google" target="_blank" rel="noopener" aria-label="Google Play"></a></div>
-          <div class="store-badge-box"><a href="https://apps.apple.com/us/app/volts-entrenador-personal-ia/id6760197459" class="store-badge store-badge-apple" target="_blank" rel="noopener" aria-label="App Store"></a></div>
+          <div class="store-badge-box"><a href="https://play.google.com/store/apps/details?id=com.volts.app" class="store-badge" target="_blank" rel="noopener" aria-label="Google Play"><img src="img/btn-google.png" alt="Google Play" width="220" height="76"></a></div>
+          <div class="store-badge-box"><a href="https://apps.apple.com/us/app/volts-entrenador-personal-ia/id6760197459" class="store-badge" target="_blank" rel="noopener" aria-label="App Store"><img src="img/btn-apple.png" alt="App Store" width="220" height="76"></a></div>
         </div>
       </div>
     </section>
@@ -156,6 +130,18 @@
         else if (endX - startX > 50) goTo(idx - 1);
       });
       goTo(0);
+    })();
+  </script>
+  <script>
+    (function() {
+      var layer = document.getElementById('parallaxLayer');
+      if (!layer || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      function updateParallax() {
+        var y = window.pageYOffset || document.documentElement.scrollTop;
+        layer.style.transform = 'translate3d(0, ' + (y * 0.35) + 'px, 0)';
+      }
+      window.addEventListener('scroll', updateParallax, { passive: true });
+      updateParallax();
     })();
   </script>
 </body>

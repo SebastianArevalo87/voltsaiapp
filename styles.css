@@ -67,6 +67,31 @@ body {
   color: var(--on-surface);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  position: relative;
+  min-height: 100vh;
+}
+/* Fondo base liso (sin divisiones) para que el parallax se vea */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  background-color: var(--surface);
+}
+/* Capa parallax que se mueve más lento (controlada por JS) */
+.parallax-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(ellipse 100% 60% at 20% 80%, rgba(232, 93, 4, 0.08) 0%, transparent 50%);
+  will-change: transform;
 }
 
 .container {
@@ -368,7 +393,7 @@ body {
   max-height: 62px !important;
   flex-shrink: 0;
   box-sizing: border-box;
-  overflow: hidden;
+  overflow: visible;
 }
 @media (min-width: 480px) {
   .store-badge-box {
@@ -385,21 +410,36 @@ body {
   display: block;
   width: 100% !important;
   height: 100% !important;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
+  min-width: 0;
+  min-height: 0;
   box-sizing: border-box;
-  transition: transform 0.2s ease, opacity 0.2s ease;
 }
-.store-badge:hover {
-  transform: scale(1.05);
-  opacity: 0.95;
+.store-badge img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
 }
-.store-badge-google {
-  background-image: url("img/btn-google.png");
+@media (min-width: 480px) {
+  .store-badge {
+    width: 220px !important;
+    height: 76px !important;
+    min-width: 220px !important;
+    min-height: 76px !important;
+    max-width: 220px !important;
+    max-height: 76px !important;
+  }
 }
-.store-badge-apple {
-  background-image: url("img/btn-apple.svg");
+@media (max-width: 479px) {
+  .store-badge {
+    width: 180px !important;
+    height: 62px !important;
+    min-width: 180px !important;
+    min-height: 62px !important;
+    max-width: 180px !important;
+    max-height: 62px !important;
+  }
 }
 
 /* Buttons */
@@ -448,7 +488,7 @@ body {
 /* Preview "Así es la app" – Option B (CSS only) */
 .preview {
   padding: 3rem 0 4rem;
-  background-color: var(--surface-container);
+  background-color: transparent;
 }
 
 .preview-title {
@@ -482,19 +522,26 @@ body {
 .preview-grid .preview-card.reveal:nth-child(1) { transition-delay: 0.08s; }
 .preview-grid .preview-card.reveal:nth-child(2) { transition-delay: 0.18s; }
 
-/* Grid de screenshots reales */
+/* Grid de screenshots: 6 en 2 filas de 3 */
 .screenshots-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.25rem;
   justify-content: center;
+  justify-items: center;
   align-items: start;
 }
 @media (min-width: 640px) {
-  .screenshots-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1.5rem; }
+  .screenshots-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
 }
 @media (min-width: 960px) {
-  .screenshots-grid { grid-template-columns: repeat(4, 1fr); gap: 1.75rem; }
+  .screenshots-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+  }
 }
 .screenshot-img {
   width: 100%;
@@ -674,7 +721,7 @@ body {
 /* Features */
 .features {
   padding: 3rem 0 4rem;
-  background-color: var(--surface);
+  background-color: transparent;
 }
 
 .features-title {
@@ -778,7 +825,7 @@ body {
 .footer {
   padding: 1.5rem 0;
   border-top: 1px solid var(--outline);
-  background-color: var(--surface-container);
+  background-color: transparent;
 }
 
 .footer-inner {
