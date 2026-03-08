@@ -356,15 +356,26 @@ body {
   gap: 1.25rem;
   align-items: center;
 }
-.store-badge {
+/* Caja fija: mismo tamaño para ambos botones */
+.store-badge-box {
   display: block;
   flex: 0 0 160px;
   width: 160px;
-  min-width: 160px;
-  max-width: 160px;
   height: 56px;
-  min-height: 56px;
-  max-height: 56px;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+@media (min-width: 480px) {
+  .store-badge-box {
+    flex: 0 0 200px;
+    width: 200px;
+    height: 70px;
+  }
+}
+.store-badge {
+  display: block;
+  width: 100%;
+  height: 100%;
   line-height: 0;
   overflow: hidden;
   box-sizing: border-box;
@@ -376,34 +387,11 @@ body {
 }
 .store-badge img {
   display: block;
-  width: 160px;
-  height: 56px;
-  min-width: 160px;
-  max-width: 160px;
-  min-height: 56px;
-  max-height: 56px;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
   object-position: center;
   box-sizing: border-box;
-}
-@media (min-width: 480px) {
-  .store-badge {
-    flex: 0 0 200px;
-    width: 200px;
-    min-width: 200px;
-    max-width: 200px;
-    height: 70px;
-    min-height: 70px;
-    max-height: 70px;
-  }
-  .store-badge img {
-    width: 200px;
-    height: 70px;
-    min-width: 200px;
-    max-width: 200px;
-    min-height: 70px;
-    max-height: 70px;
-  }
 }
 
 /* Buttons */
