@@ -114,22 +114,134 @@ body {
   color: var(--on-surface);
 }
 
-/* Banner principal (feature graphic) al inicio – no escalar por encima de su resolución */
+/* Banner principal: texto + carrusel de screenshots (diseño en código) */
 .hero-banner {
   width: 100%;
   background-color: var(--surface);
-  padding: 0;
-  line-height: 0;
-  display: flex;
-  justify-content: center;
+  padding: 2.5rem 0 3rem;
 }
-.hero-banner-img {
-  max-width: 100%;
-  width: 1024px;
+.hero-banner-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  align-items: center;
+}
+@media (min-width: 900px) {
+  .hero-banner-inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    max-width: 1024px;
+  }
+}
+.hero-banner-text {
+  flex: 0 1 auto;
+  text-align: center;
+}
+@media (min-width: 900px) {
+  .hero-banner-text { text-align: left; }
+}
+.hero-banner-brand {
+  margin: 0 0 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--primary);
+}
+.hero-banner-title {
+  margin: 0 0 0.5rem;
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  font-weight: 700;
+  color: var(--on-surface);
+  letter-spacing: -0.03em;
+  border-bottom: 4px solid var(--primary);
+  display: inline-block;
+  padding-bottom: 0.1em;
+}
+.hero-banner-tagline {
+  margin: 0 0 1.25rem;
+  font-size: 1.125rem;
+  color: var(--on-surface-variant);
+  max-width: 28ch;
+}
+@media (min-width: 900px) {
+  .hero-banner-tagline { margin-left: 0; }
+}
+.hero-banner-features {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 1rem;
+  color: var(--on-surface);
+}
+.hero-banner-features li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.hero-banner-features li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.4em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--primary);
+}
+.hero-banner-carousel-wrap {
+  flex: 0 0 auto;
+  width: 100%;
+  max-width: 320px;
+}
+@media (min-width: 900px) {
+  .hero-banner-carousel-wrap { max-width: 280px; }
+}
+.hero-banner-carousel {
+  overflow: hidden;
+  border-radius: 24px;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.45);
+  border: 1px solid var(--outline);
+  touch-action: pan-y pinch-zoom;
+}
+.carousel-track {
+  display: flex;
+  transition: transform 0.35s ease-out;
+  will-change: transform;
+}
+.carousel-slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+.carousel-slide img {
+  width: 100%;
   height: auto;
   display: block;
   vertical-align: middle;
-  object-fit: contain;
+}
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--outline);
+  cursor: pointer;
+  padding: 0;
+  transition: background-color 0.2s, transform 0.2s;
+}
+.carousel-dot:hover {
+  background-color: var(--on-surface-variant);
+}
+.carousel-dot[aria-current="true"] {
+  background-color: var(--primary);
+  transform: scale(1.2);
 }
 
 /* Hero – efecto wow */
