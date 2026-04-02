@@ -9,6 +9,62 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .mobile-install-banner {
+      display: none;
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 999;
+      background: rgba(20, 20, 30, 0.94);
+      color: #fff;
+      padding: 12px 12px 8px;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+      font-family: Roboto, system-ui, sans-serif;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      border-top: 1px solid #444;
+    }
+    .mobile-install-banner.show { display: flex; }
+    .mobile-install-text { font-size: 0.88rem; font-weight: 600; margin-right: 8px; }
+    .mobile-install-buttons {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+    .mobile-install-buttons a {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 8px;
+      background: #ffffff;
+      color: #000;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+    .mobile-install-buttons a img { width: 100px; height: auto; }
+    .mobile-install-dismiss {
+      background: transparent;
+      border: 0;
+      color: #fff;
+      font-size: 1.3rem;
+      line-height: 1;
+      padding: 2px 6px;
+      cursor: pointer;
+    }
+    @media (max-width: 768px) {
+      .mobile-install-banner { display: flex; }
+      .mobile-install-text { display: none; }
+      .mobile-install-buttons a img { width: 90px; }
+    }
+    @media (min-width: 769px) {
+      .mobile-install-banner { display: none !important; }
+    }
+  </style>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -19,6 +75,19 @@
       <span class="header-brand">Volts</span>
     </div>
   </header>
+
+  <div id="mobileInstallBanner" class="mobile-install-banner" role="status" aria-live="polite" aria-label="Instalar Volts">
+    <span class="mobile-install-text">Instala Volts en tu teléfono</span>
+    <div class="mobile-install-buttons">
+      <a id="mobileInstallAndroid" href="https://play.google.com/store/apps/details?id=com.volts.app" target="_blank" rel="noopener noreferrer" aria-label="Instalar en Google Play">
+        <img src="img/btn-google.png" alt="Google Play" loading="lazy">
+      </a>
+      <a id="mobileInstallIos" href="https://apps.apple.com/us/app/volts-entrenador-personal-ia/id6760197459" target="_blank" rel="noopener noreferrer" aria-label="Instalar en App Store">
+        <img src="img/btn-apple.png" alt="App Store" loading="lazy">
+      </a>
+    </div>
+    <button id="mobileInstallDismiss" class="mobile-install-dismiss" aria-label="Cerrar notificación de instalación">×</button>
+  </div>
 
   <main>
     <section class="hero">
@@ -142,6 +211,40 @@
       }
       window.addEventListener('scroll', updateParallax, { passive: true });
       updateParallax();
+    })();
+  </script>
+  <script>
+    (function() {
+      var banner = document.getElementById('mobileInstallBanner');
+      var androidButton = document.getElementById('mobileInstallAndroid');
+      var iosButton = document.getElementById('mobileInstallIos');
+      var dismiss = document.getElementById('mobileInstallDismiss');
+      if (!banner || !androidButton || !iosButton || !dismiss) return;
+      if (localStorage.getItem('voltsInstallBannerHidden') === '1') {
+        banner.style.display = 'none';
+        return;
+      }
+      var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+      var isAndroid = /android/i.test(userAgent);
+      var isIOS = /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
+      if (isAndroid) {
+        iosButton.style.display = 'none';
+        banner.classList.add('show');
+      } else if (isIOS) {
+        androidButton.style.display = 'none';
+        banner.classList.add('show');
+      } else {
+        // mostrar al menos uno para móviles no detectados, ocultar en escritorio
+        if (window.innerWidth <= 768) {
+          banner.classList.add('show');
+        } else {
+          banner.style.display = 'none';
+        }
+      }
+      dismiss.addEventListener('click', function() {
+        banner.style.display = 'none';
+        localStorage.setItem('voltsInstallBannerHidden', '1');
+      });
     })();
   </script>
 </body>
